@@ -10,6 +10,7 @@
 !.gitattributes
 
 !.mise.toml
+!.editorconfig
 
 #### Subfolders
 !.vscode
