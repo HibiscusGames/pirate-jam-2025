@@ -1,0 +1,10 @@
+#### Exclude everything by default
+*
+
+#### Configuration files
+!.gitignore
+
+#### Images and other files
+!**/
+!**/*.png
+!**/*.md
