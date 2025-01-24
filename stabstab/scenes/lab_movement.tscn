@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqhsv4rsyx147"]
+
+[ext_resource type="PackedScene" uid="uid://blx601m6ivvst" path="res://scenes/player/player_pawn.tscn" id="1_l5xia"]
+
+[node name="LabMovement" type="Node2D"]
+
+[node name="PlayerPawn" parent="." instance=ExtResource("1_l5xia")]
+position = Vector2(560, 326)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bxsqx3xcl6fi8"]
+
+[ext_resource type="Texture2D" uid="uid://dl6jageclnpeq" path="res://top_down_controlled_projectile/assets/arrow-top-down.tga" id="1_6vdlg"]
+
+[resource]
+atlas = ExtResource("1_6vdlg")
+region = Rect2(0, 0, 64, 64)
