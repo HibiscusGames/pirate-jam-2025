@@ -12,6 +12,9 @@
 !.mise.toml
 !.editorconfig
 
+!.markdownlint-cli2.jsonc
+!.markdownlint.jsonc
+
 #### Subfolders
 !.vscode
 !docs
