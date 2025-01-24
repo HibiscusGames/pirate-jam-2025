@@ -15,12 +15,11 @@
 !.markdownlint-cli2.jsonc
 !.markdownlint.jsonc
 
+!lefthook.yml
+
 #### Subfolders
 !.vscode
+!.mise
 !docs
 !stabstab
-!.mise
-
-
-!this
-!lefthook.yml
+!raw_art
