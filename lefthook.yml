@@ -1,8 +1,8 @@
-pre-push:
-  parrallel: true
-  jobs:
-    - name: full lint
-      run: mise lint --all
+# pre-push:
+#   parrallel: true
+#   jobs:
+#     - name: full lint
+#       run: mise lint --all
 
 pre-commit:
   interactive: true
