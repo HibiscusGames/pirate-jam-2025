@@ -1,0 +1,5 @@
+## Enable all files by default because I don't know the list of godot files we'll need.
+!*
+
+## Exclude .godot folder
+.godot
