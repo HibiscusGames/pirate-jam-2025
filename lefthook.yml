@@ -1,0 +1,13 @@
+pre-push:
+  parrallel: true
+  jobs:
+    - name: full lint
+      run: mise lint --all
+
+pre-commit:
+  interactive: true
+  commands:
+    validate-git:
+      interactive: true
+      run: mise pre-commit
+

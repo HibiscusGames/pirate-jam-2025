@@ -4,6 +4,9 @@ indent_size = 2
 end_of_line = lf
 insert_final_newline = true
 
+[*.yml]
+indent_style = space
+
 [*.md]
 indent_size = 2
 

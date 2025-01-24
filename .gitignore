@@ -9,7 +9,7 @@
 !.gitignore
 !.gitattributes
 
-!.mise.toml
+!mise.toml
 !.editorconfig
 
 !.markdownlint-cli2.jsonc
@@ -19,5 +19,8 @@
 !.vscode
 !docs
 !stabstab
+!.mise
 
 
+!this
+!lefthook.yml

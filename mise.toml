@@ -1,0 +1,28 @@
+[tools]
+lefthook = "1.10.10"
+node = "23.6.1"
+"npm:markdownlint-cli2" = "0.17.2"
+
+[hooks]
+enter = "lefthook install"
+
+[[watch_files]]
+patterns = ["lefthook.yml"]
+run = "lefthook install"
+
+[tasks."pre-commit"]
+hide = true
+description = "Run pre-commit tasks"
+depends = ["pre-commit:*"]
+
+[tasks."lint:all"]
+description = "Run linters"
+run = "markdownlint-cli2"
+
+[tasks."lint:diff"]
+description = "Run linters on diff"
+run = "markdownlint-cli2 "
+
+[tasks."diff:files"]
+description = "Get files that have changed since the last commit on origin/main"
+run = "git diff --name-only --diff-filter=d origin/main"
