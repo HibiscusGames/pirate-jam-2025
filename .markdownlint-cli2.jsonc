@@ -1,3 +1,4 @@
 {
+	"globs": ["**/*.md"],
 	"ignores": ["LICENSE.md"]
 }

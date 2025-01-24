@@ -1,6 +1,7 @@
 # Godot Configuration
 
-These are some basic settings to get Godot to facilitate most workflows. This document is a work in progress. Please share your improvements, especially with regards to your speciality, so everyone can benefit from them.
+These are some basic settings to get Godot to facilitate most workflows. This document is a work in progress.
+Please share your improvements, especially with regards to your speciality, so everyone can benefit from them.
 
 ## General editor settings
 
