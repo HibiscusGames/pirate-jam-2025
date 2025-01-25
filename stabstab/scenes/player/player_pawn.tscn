@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blx601m6ivvst"]
 
-[ext_resource type="Texture2D" path="res://res/arrow.tres" id="1_4br4f"]
 [ext_resource type="Script" path="res://scenes/player/player_pawn.gd" id="1_jwimk"]
+[ext_resource type="Texture2D" uid="uid://h3j45nsyxj3r" path="res://res/projectile/Projectile.png" id="2_fi5do"]
 
 [node name="PlayerPawn" type="Node2D"]
 script = ExtResource("1_jwimk")
@@ -9,7 +9,8 @@ script = ExtResource("1_jwimk")
 [node name="Pivot" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
-texture = ExtResource("1_4br4f")
+texture = ExtResource("2_fi5do")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot"]
-polygon = PackedVector2Array(-29, -28, -14, 0, -29, 28, 27, 0)
+z_index = 5
+polygon = PackedVector2Array(-9, -48, -13, -1, -29, 15, -26, 39, 1, 53, 25, 38, 29, 17, 15, -1, 10, -49, 0, -62)
