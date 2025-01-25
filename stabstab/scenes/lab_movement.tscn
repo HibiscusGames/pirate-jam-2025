@@ -61,3 +61,6 @@ position = Vector2(2.00001, 3)
 scale = Vector2(7.44531, 7.68261)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_aelkr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
