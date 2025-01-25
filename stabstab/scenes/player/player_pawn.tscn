@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://blx601m6ivvst"]
 
-[ext_resource type="Texture2D" path="res://res/arrow.tres" id="1_4br4f"]
+[ext_resource type="Texture2D" uid="uid://bxsqx3xcl6fi8" path="res://res/arrow.tres" id="1_4br4f"]
 [ext_resource type="Script" path="res://scenes/player/player_pawn.gd" id="1_jwimk"]
 
 [node name="PlayerPawn" type="Node2D"]
