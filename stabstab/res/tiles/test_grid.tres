@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://45emr4f24tp4"]
 
-[ext_resource type="Texture2D" uid="uid://ut3b7a1qojef" path="res://top_down_controlled_projectile/assets/tiles/test_tiles.tga" id="1_ycw2d"]
+[ext_resource type="Texture2D" uid="uid://ut3b7a1qojef" path="res://res/tiles/test_tiles.tga" id="1_ycw2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8ipn"]
 resource_name = "FloorTexture"
