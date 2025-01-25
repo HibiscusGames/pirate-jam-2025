@@ -1,5 +1,13 @@
 # Pirate Jam 2025
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+StabStab is a short game chronicling the adventures of a magical sentient flying
+dagger as they embark on a journey to gain power and find a being worthy of their loyalty.
+
+This is our entry for the [Pirate Jam 2025](https://itch.io/jam/pirate-jam-2025) game jam.
+The game is available on [itch.io](https://hibiscusgames.itch.io/stabstab).
+
 ## Setup
 
 [Download the setup helper](https://github.com/HibiscusGames/pirate-jam-2025/TBD) and follow the instructions on screen
@@ -55,17 +63,16 @@ If we're working with a binary format, eg: .docx and the like, we'll be using `g
 
 ## License
 
-Copyright (C) 2025  Pierre Fouilloux, Iain Armour, and Irvin Dos Reis
+Copyright (C) 2025 Pierre Fouilloux, Iain Armour, and Irvin Dos Reis
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+This game by Pierre Fouilloux, Iain Armour and Irvin dos Reis is dual-licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+and [GNU AGPL3](https://www.gnu.org/licenses/agpl-3.0.html).
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
+- The art, story, music, sound effects, and other art assets are licensed under [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0).
+- The code and the combined work of the code and the art assets are licensed under [GNU AGPL3](https://www.gnu.org/licenses/agpl-3.0.html).
 
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+See the [LICENSE](license/LICENSE.md) file for more details.
+
+## Attribution
+
+When using or modifying this work, you must provide proper attribution as described in the [ATTRIBUTION](ATTRIBUTION.md) file.

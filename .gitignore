@@ -3,7 +3,12 @@
 
 #### Project files
 !README.md
+
+#### License files
 !LICENSE.md
+!license
+!license/*.txt
+!license/*.md
 
 #### Configuration files
 !.gitignore
