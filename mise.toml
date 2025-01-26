@@ -10,10 +10,42 @@ enter = "lefthook install"
 patterns = ["lefthook.yml"]
 run = "lefthook install"
 
+[[watch_files]]
+patterns = ["mise.toml", "**/mise.toml"]
+run = "mise install"
+
+[[watch_files]]
+patterns = [
+	"*.psd",
+	"*.xdf",
+	"*.kra",
+	"*.png",
+	"*.jpg",
+	"*.jpeg",
+	"*.tiff",
+	"*.tga",
+	"*.aup3",
+	"*.sesx",
+	"*.flp",
+	"*.rpp",
+	"*.als",
+	"*.wav",
+	"*.ogg",
+	"*.mp3",
+	"*.aif",
+	"*.aiff",
+	"*.mid",
+	"*.midi",
+]
+run = "mise lfs:checkout"
+
+[task_config]
+includes = ["**/tasks.toml"]
+
 [tasks."pre-commit"]
 hide = true
 description = "Run pre-commit tasks"
-depends = ["pre-commit:*"]
+# depends = ["pre-commit:*"]
 
 [tasks."lint:all"]
 description = "Run linters"

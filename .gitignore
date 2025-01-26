@@ -9,6 +9,8 @@
 !license
 !license/*.txt
 !license/*.md
+!ATTRIBUTION.md
+!THIRD_PARTY_LICENSES.md
 
 #### Configuration files
 !.gitignore

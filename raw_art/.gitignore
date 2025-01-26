@@ -1,2 +1,34 @@
 !**/
-!**/*.xcf
+
+## Mise
+!tasks.toml
+
+## Image project files
+!**/*.psd
+!**/*.xdf
+!**/*.kra
+
+## Image files
+!**/*.png
+!**/*.jpg
+!**/*.jpeg
+!**/*.tiff
+!**/*.tga
+
+## Audio project files
+!**/*.aup3
+!**/*.sesx
+!**/*.flp
+!**/*.rpp
+!**/*.als
+
+## Game Audio Assets
+!**/*.wav
+!**/*.ogg
+!**/*.mp3
+
+## Support Audio Files
+!**/*.aif
+!**/*.aiff
+!**/*.mid
+!**/*.midi
