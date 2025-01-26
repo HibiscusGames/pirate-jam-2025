@@ -40,7 +40,7 @@ patterns = [
 run = "mise lfs:checkout"
 
 [task_config]
-includes = ["**/tasks.toml"]
+includes = ["raw_art/tasks.toml", ".mise/tasks"]
 
 [tasks."pre-commit"]
 hide = true
