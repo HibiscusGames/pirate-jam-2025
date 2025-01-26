@@ -1,0 +1,18 @@
+["lfs:checkout"]
+description = "Checkout one or more files in the git LFS repository. This prevents others modifying it on the remote while you are working."
+usage = '''
+	arg "files" help="One or more files to checkout."
+'''
+run = ['git lfs lock {{arg(name="files", var=true)}}']
+
+["lfs:rollback"]
+description = "Rollback one or more files in the git LFS repository. This will discard your local modifications."
+usage = '''
+	arg "files" help="One or more files to checkout."
+'''
+run = ['git checkout {{arg(name="files", var=true)}}', 'git lfs unlock {{arg(name="files", var=true)}}'] 
+
+["lfs:status"]
+quiet = true
+description = "Show the status of the files in the git repository including git lfs tracked files."
+run = ["git lfs status", "echo \"Checked out files:\n\"", "git lfs locks"]
