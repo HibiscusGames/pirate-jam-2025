@@ -31,5 +31,5 @@ func _draw() -> void:
 ##### Signal handler ######
 
 func _on_debug_toggled() -> void:
-	if !Debug.is_enabled(Debug.Gizmo.TRAJECTORIES):
+	if !Debug.is_enabled(Debug.Gizmo.TRAJECTORY):
 		queue_free()

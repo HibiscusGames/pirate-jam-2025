@@ -20,4 +20,4 @@ texture = ExtResource("2_fi5do")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pivot"]
 z_index = 5
-polygon = PackedVector2Array(-9, -48, -13, -1, -29, 15, -26, 39, 1, 53, 25, 38, 29, 17, 15, -1, 10, -49, 0, -62)
+polygon = PackedVector2Array(50, 10, 5, 5, -12, 28, -38, 23, -50, 0, -38, -23, -12, -28, 5, -5, 50, -10, 61, 0)

@@ -15,6 +15,6 @@ func _init() -> void:
 ###### Exported Methods ######
 
 func _on_debug_toggled() -> void:
-	if Debug.is_enabled(Debug.Gizmo.TRAJECTORIES):
+	if Debug.is_enabled(Debug.Gizmo.TRAJECTORY):
 		var tracer = TrajectoryTracer2D.create(color)
 		tracer_added.emit(tracer)

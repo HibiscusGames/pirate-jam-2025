@@ -19,7 +19,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#curve stuff
 	curve.add_point(get_parent().position)
 	if curve.get_baked_points().size() > MAX_POINTS:
