@@ -14,7 +14,6 @@ extends Node2D
 	1.0: Color(1, 1, 1, 0),
 });
 
-
 @export_group("Debug")
 @export var trajectory_tracer: TrajectoryTracer2DFactory;
 
@@ -53,11 +52,12 @@ func _tick(delta: float) -> void:
 		_velocity = _trajectory.get_direction() * speed
 		_spawn_trail()
 
-	# if (_velocity.length() < 1 && _cur_trail != null):
-	# 	_cur_trail.stop()
+	if (_velocity.length() < 1 && _cur_trail != null):
+		_cur_trail.stop()
+		_cur_trail = null
 
 	global_translate(_velocity * delta)
-	_velocity -= _velocity * deceleration_rate * delta
+	_velocity = lerp(_velocity, Vector2.ZERO, deceleration_rate * delta) # TODO: Need a different kind of interpolation that tapers off sharply instead of slowing down over time
 
 func _spawn_trail():
 	if (_cur_trail == null):
