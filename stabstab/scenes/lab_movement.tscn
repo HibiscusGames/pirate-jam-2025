@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dqhsv4rsyx147"]
+[gd_scene load_steps=7 format=4 uid="uid://dqhsv4rsyx147"]
 
 [ext_resource type="TileSet" uid="uid://mq8e0dpp3m6a" path="res://res/tiles/BaseTileSet.tres" id="1_75gwa"]
-[ext_resource type="PackedScene" uid="uid://blx601m6ivvst" path="res://scenes/player/player_pawn.tscn" id="1_l5xia"]
-[ext_resource type="Script" path="res://src/debug/trajectory_tracer_2d_factory.gd" id="3_2vibp"]
+[ext_resource type="PackedScene" uid="uid://dii8y5ofeuycc" path="res://scenes/player/pawn.tscn" id="2_q5sty"]
 
 [sub_resource type="Gradient" id="Gradient_dcusg"]
 offsets = PackedFloat32Array(0, 0.357143, 0.681818)
@@ -12,11 +11,6 @@ colors = PackedColorArray(1, 0.933737, 0.984572, 1, 0.815439, 0.518523, 0, 1, 0,
 gradient = SubResource("Gradient_dcusg")
 fill = 1
 fill_from = Vector2(0.481651, 0.46789)
-
-[sub_resource type="Resource" id="Resource_3icca"]
-resource_local_to_scene = true
-script = ExtResource("3_2vibp")
-color = Color(0.794507, 0.424023, 0.623018, 1)
 
 [sub_resource type="Gradient" id="Gradient_dt0tu"]
 offsets = PackedFloat32Array(0, 0.311688, 1)
@@ -56,14 +50,11 @@ scale = Vector2(7.44531, 7.68261)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_hihhw")
 
-[node name="PlayerPawn" parent="." instance=ExtResource("1_l5xia")]
-position = Vector2(206, 340)
-trajectory_tracer = SubResource("Resource_3icca")
-speed = null
-deceleration_rate = null
+[node name="PlayerPawn" parent="Environment" instance=ExtResource("2_q5sty")]
+position = Vector2(208, 353)
 
-[node name="PointLight2D" type="PointLight2D" parent="PlayerPawn"]
-position = Vector2(2.00001, 3)
+[node name="PointLight2D" type="PointLight2D" parent="Environment/PlayerPawn"]
+position = Vector2(1.52588e-05, -10)
 scale = Vector2(7.44531, 7.68261)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_aelkr")

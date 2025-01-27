@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqh7h0a4lue5m"]
+
+[ext_resource type="Script" path="res://scenes/effects/trail.gd" id="1_lrs5u"]
+
+[sub_resource type="Curve" id="Curve_6nfwg"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.9, 0.021978), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xcjw1"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.61, 0, 0.4, 1, 0.968627, 0.486275, 0.803922, 0.772549, 1, 0.992157, 0.996078, 0.0823529)
+
+[node name="PlayerTrail" type="Line2D"]
+show_behind_parent = true
+top_level = true
+z_index = 1
+scale = Vector2(1.42555, 1.14112)
+points = PackedVector2Array(0, 0, -32, 0, -64, 0, -96, 0, -128, 0, -160, 0, -192, 0, -224, 0, -256, 0)
+width = 48.0
+width_curve = SubResource("Curve_6nfwg")
+gradient = SubResource("Gradient_xcjw1")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+script = ExtResource("1_lrs5u")
