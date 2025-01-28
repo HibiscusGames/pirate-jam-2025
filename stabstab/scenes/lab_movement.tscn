@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://dqhsv4rsyx147"]
+[gd_scene load_steps=8 format=4 uid="uid://dqhsv4rsyx147"]
 
 [ext_resource type="TileSet" uid="uid://mq8e0dpp3m6a" path="res://res/tiles/BaseTileSet.tres" id="1_75gwa"]
+[ext_resource type="Script" path="res://src/predicate/property.gd" id="2_h2kd3"]
 [ext_resource type="PackedScene" uid="uid://dii8y5ofeuycc" path="res://scenes/player/pawn.tscn" id="2_q5sty"]
 
 [sub_resource type="Gradient" id="Gradient_dcusg"]
@@ -58,6 +59,11 @@ position = Vector2(1.52588e-05, -10)
 scale = Vector2(7.44531, 7.68261)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_aelkr")
+script = ExtResource("2_h2kd3")
+behaviour/predicate/subject_type = "Node2D"
+behaviour/predicate/comparison = 0
+behaviour/predicate/property_name = "light_mask"
+behaviour/predicate/comparator = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)

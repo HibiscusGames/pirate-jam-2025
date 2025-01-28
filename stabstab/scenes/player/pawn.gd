@@ -1,4 +1,5 @@
 extends Node2D
+class_name PlayerPawn
 
 ## Exported variables ##
 @export_group("Movement")
