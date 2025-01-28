@@ -15,6 +15,7 @@ colors = PackedColorArray(0.75, 0.35, 0.166, 1, 0.874351, 0.267638, 0.242977, 1,
 
 [sub_resource type="Resource" id="Resource_aiyxh"]
 script = ExtResource("2_nheat")
+color = Color(0.941176, 1, 1, 1)
 
 [node name="PlayerPawn" type="Node2D" node_paths=PackedStringArray("trail_starting_point")]
 z_index = 20
