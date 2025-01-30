@@ -1,10 +1,11 @@
-extends Node2D
+extends PhysicsBody2D
 class_name PlayerPawn
 
 ## Exported variables ##
 @export_group("Movement")
 @export var speed: float = 500.0
 @export var deceleration_rate: float = 0.1;
+@export var bounce_factor: float = 0.1;
 
 @export_group("Effects")
 @export var trail_starting_point: Node2D = self
@@ -57,7 +58,10 @@ func _tick(delta: float) -> void:
 		_cur_trail.stop()
 		_cur_trail = null
 
-	global_translate(_velocity * delta)
+	var _collision: KinematicCollision2D = move_and_collide(_velocity * delta)
+	if _collision != null:
+		_velocity = _velocity.bounce(_collision.get_normal()) * bounce_factor
+
 	_velocity = lerp(_velocity, Vector2.ZERO, deceleration_rate * delta) # TODO: Need a different kind of interpolation that tapers off sharply instead of slowing down over time
 
 func _spawn_trail():
@@ -70,5 +74,5 @@ func _new_gradient(data: Dictionary) -> Gradient:
 	
 	g.offsets = data.keys()
 	g.colors = data.values()
-
+	
 	return g
