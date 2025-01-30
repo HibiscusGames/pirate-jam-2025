@@ -3,3 +3,6 @@
 
 ## Exclude .godot folder
 .godot
+
+## Exclude temporary files
+**/*~
