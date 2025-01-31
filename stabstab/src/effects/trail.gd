@@ -21,11 +21,12 @@ var _timer;
 
 ######### Initialisation ##########
 
-static func create(parent: Node2D, curve: Curve, grad: Gradient) -> EffectTrail:
+static func create(parent: Node2D, curve: Curve, grad: Gradient, material: Material) -> EffectTrail:
 	var trail = EffectTrail.new()
 	trail.z_index = parent.z_index
 	trail.width_curve = curve
 	trail.gradient = grad
+	trail.material = material
 	parent.add_child(trail)
 
 	trail._last_point = parent.global_position

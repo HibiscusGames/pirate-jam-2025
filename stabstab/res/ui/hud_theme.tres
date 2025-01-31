@@ -1,0 +1,143 @@
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dj85lqv7fixs6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5m0a"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.541176)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cevss"]
+
+[sub_resource type="Curve" id="Curve_46qfu"]
+_data = [Vector2(0.0711462, 0.5202), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_7k7cl"]
+_data = [Vector2(0.0948617, 0.319202), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_m8ljo"]
+_data = [Vector2(0.252964, 0.656359), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ytepv"]
+curve_x = SubResource("Curve_46qfu")
+curve_y = SubResource("Curve_7k7cl")
+curve_z = SubResource("Curve_m8ljo")
+
+[sub_resource type="Gradient" id="Gradient_nggh7"]
+resource_local_to_scene = true
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0.276995, 0.347418, 0.469484, 0.661972, 0.769953, 0.826291)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.170212, 0.170212, 0.170212, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tsmos"]
+noise_type = 2
+seed = 4
+frequency = 0.042
+fractal_type = 3
+fractal_lacunarity = 0.0
+fractal_gain = 0.042
+fractal_ping_pong_strength = 4.0
+cellular_distance_function = 1
+cellular_jitter = 0.67
+cellular_return_type = 3
+domain_warp_amplitude = 3.435
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 0.02
+domain_warp_fractal_gain = 6.525
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fqnku"]
+resource_local_to_scene = true
+width = 256
+height = 64
+as_normal_map = true
+bump_strength = 0.9
+color_ramp = SubResource("Gradient_nggh7")
+noise = SubResource("FastNoiseLite_tsmos")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gb0wj"]
+diffuse_texture = SubResource("CurveXYZTexture_ytepv")
+normal_texture = SubResource("NoiseTexture2D_fqnku")
+specular_color = Color(0.535587, 0.146508, 0.566835, 1)
+texture_repeat = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mpisy"]
+texture = SubResource("CanvasTexture_gb0wj")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23uaf"]
+bg_color = Color(0.128, 0.16, 0.152, 0.0627451)
+border_width_left = 2
+border_width_top = 16
+border_width_right = 2
+border_width_bottom = 16
+border_color = Color(0.435, 0.498917, 0.5, 0.25098)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et11v"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.501961)
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly3l2"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o038r"]
+bg_color = Color(0.823529, 0.454902, 0.247059, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.821081, 0.456439, 0.245867, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 16
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76o8p"]
+bg_color = Color(0.832902, 9.70316e-05, 0.67748, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 16
+anti_aliasing_size = 0.5
+
+[resource]
+ClippingContainer/base_type = &"PanelContainer"
+ClippingContainer/styles/panel = SubResource("StyleBoxFlat_q5m0a")
+EnergyBar/base_type = &"ProgressBar"
+EnergyBar/styles/background = SubResource("StyleBoxEmpty_cevss")
+EnergyBar/styles/fill = SubResource("StyleBoxTexture_mpisy")
+GlassPanel/base_type = &"Panel"
+GlassPanel/styles/panel = SubResource("StyleBoxFlat_23uaf")
+InsetPanel/base_type = &"Panel"
+InsetPanel/styles/panel = SubResource("StyleBoxFlat_et11v")
+LeatherPanel/base_type = &"Panel"
+LeatherPanel/styles/panel = SubResource("StyleBoxFlat_ly3l2")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_o038r")
+RoundedInnerPanel/base_type = &"Panel"
+RoundedInnerPanel/styles/panel = SubResource("StyleBoxFlat_76o8p")

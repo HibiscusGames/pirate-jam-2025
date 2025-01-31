@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnergyPool" load_steps=2 format=3 uid="uid://wklm32r76lia"]
+
+[ext_resource type="Script" path="res://src/attributes/energy_pool.gd" id="1_iqvfh"]
+
+[resource]
+script = ExtResource("1_iqvfh")
+max_energy = 5
+current_energy = 5
+default_increase = 1
+default_decrease = 1

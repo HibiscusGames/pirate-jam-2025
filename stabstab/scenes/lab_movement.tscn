@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://dqhsv4rsyx147"]
+[gd_scene load_steps=7 format=4 uid="uid://dqhsv4rsyx147"]
 
 [ext_resource type="TileSet" uid="uid://mq8e0dpp3m6a" path="res://res/tiles/BaseTileSet.tres" id="1_75gwa"]
+[ext_resource type="PackedScene" uid="uid://c74vei6kk3byx" path="res://scenes/hud.tscn" id="1_d6r68"]
 [ext_resource type="PackedScene" uid="uid://dii8y5ofeuycc" path="res://scenes/player/pawn.tscn" id="2_q5sty"]
 
 [sub_resource type="Gradient" id="Gradient_dcusg"]
@@ -11,6 +12,11 @@ colors = PackedColorArray(1, 0.933737, 0.984572, 1, 0.815439, 0.518523, 0, 1, 0,
 gradient = SubResource("Gradient_dcusg")
 fill = 1
 fill_from = Vector2(0.481651, 0.46789)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vp720"]
+resource_local_to_scene = true
+blend_mode = 1
+light_mode = 1
 
 [node name="LabMovement" type="Node2D"]
 
@@ -46,6 +52,12 @@ texture = SubResource("GradientTexture2D_hihhw")
 
 [node name="PlayerPawn" parent="Environment" instance=ExtResource("2_q5sty")]
 position = Vector2(209, 352)
+trail_material = SubResource("CanvasItemMaterial_vp720")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.4, 0.4)
+
+[node name="Hud" parent="Camera2D" instance=ExtResource("1_d6r68")]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0

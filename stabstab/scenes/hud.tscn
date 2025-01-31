@@ -1,0 +1,242 @@
+[gd_scene load_steps=21 format=3 uid="uid://c74vei6kk3byx"]
+
+[ext_resource type="Theme" uid="uid://dj85lqv7fixs6" path="res://res/ui/hud_theme.tres" id="1_pqpvs"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="2_q5cee"]
+[ext_resource type="Script" path="res://src/effects/progress_bar_with_shadow.gd" id="2_xybv4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lojjk"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_wcnxl"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.084507, 0.197183, 0.347418, 0.488263, 0.694836, 0.793427, 0.906103)
+colors = PackedColorArray(0.221902, 0.221902, 0.221902, 1, 0.64, 0.64, 0.64, 1, 0.32, 0.32, 0.32, 1, 0.64, 0.64, 0.64, 1, 0.567716, 0.567716, 0.567716, 1, 0.430057, 0.430057, 0.430057, 1, 0.727428, 0.727429, 0.727428, 1, 0.302003, 0.302004, 0.302004, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ixj4d"]
+seed = 42
+fractal_type = 2
+fractal_octaves = 6
+fractal_lacunarity = 2.2
+fractal_weighted_strength = 0.07
+fractal_ping_pong_strength = 1.0
+cellular_distance_function = 1
+cellular_jitter = 1.374
+cellular_return_type = 6
+domain_warp_enabled = true
+domain_warp_amplitude = 16.0
+domain_warp_frequency = 0.04
+domain_warp_fractal_lacunarity = 4.2
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r7u4h"]
+resource_local_to_scene = true
+width = 1008
+height = 112
+invert = true
+seamless = true
+seamless_blend_skirt = 0.242
+as_normal_map = true
+bump_strength = 4.0
+color_ramp = SubResource("Gradient_wcnxl")
+noise = SubResource("FastNoiseLite_ixj4d")
+
+[sub_resource type="Gradient" id="Gradient_3vowq"]
+offsets = PackedFloat32Array(0, 0.183099, 0.361502, 0.57277, 0.788732, 1)
+colors = PackedColorArray(0.128906, 0.128906, 0.128906, 1, 0.233255, 0.233255, 0.233255, 1, 0.555663, 0.555663, 0.555663, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0.0357789, 0.0357789, 0.0357789, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gssvi"]
+gradient = SubResource("Gradient_3vowq")
+width = 1008
+height = 112
+fill_from = Vector2(0.501618, 1)
+fill_to = Vector2(0.495146, 0)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4b47d"]
+resource_local_to_scene = true
+normal_texture = SubResource("NoiseTexture2D_r7u4h")
+specular_texture = SubResource("GradientTexture2D_gssvi")
+specular_color = Color(0.46, 0.235827, 0.0644, 1)
+specular_shininess = 0.49
+
+[sub_resource type="Gradient" id="Gradient_cr4gr"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.501961)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7slrh"]
+gradient = SubResource("Gradient_cr4gr")
+width = 16
+height = 32
+fill_from = Vector2(0.669617, 0.504425)
+fill_to = Vector2(0, 0.507375)
+
+[sub_resource type="Gradient" id="Gradient_o1avp"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0.211268, 1)
+colors = PackedColorArray(0.289741, 0.289741, 0.289741, 0.247059, 0.5106, 0.67206, 0.69, 0.25098)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fxrhy"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_o1avp")
+width = 128
+height = 32
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+repeat = 2
+
+[sub_resource type="Gradient" id="Gradient_j15xl"]
+colors = PackedColorArray(0.391819, 0.391819, 0.391819, 1, 0.631035, 0.631035, 0.631035, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eomnr"]
+resource_local_to_scene = true
+noise_type = 4
+seed = 6
+frequency = 0.0407
+fractal_octaves = 4
+fractal_lacunarity = 4.22
+fractal_gain = 0.23
+fractal_weighted_strength = 0.3
+fractal_ping_pong_strength = 3.0
+cellular_distance_function = 1
+cellular_jitter = 0.42
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_amplitude = 26.385
+domain_warp_frequency = 0.025
+domain_warp_fractal_octaves = 2
+domain_warp_fractal_lacunarity = 1.945
+domain_warp_fractal_gain = 5.86
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w5dqu"]
+width = 1008
+height = 112
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 0.141
+as_normal_map = true
+bump_strength = 4.2
+color_ramp = SubResource("Gradient_j15xl")
+noise = SubResource("FastNoiseLite_eomnr")
+
+[sub_resource type="Gradient" id="Gradient_ghbyi"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.253521, 0.666667, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0646965, 0.0646965, 0.0646965, 1, 0.401968, 0.401968, 0.401968, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q78g4"]
+gradient = SubResource("Gradient_ghbyi")
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+repeat = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e7cpv"]
+diffuse_texture = SubResource("GradientTexture2D_fxrhy")
+normal_texture = SubResource("NoiseTexture2D_w5dqu")
+specular_texture = SubResource("GradientTexture2D_q78g4")
+specular_color = Color(0.965514, 0.971363, 0.979059, 1)
+specular_shininess = 0.7
+texture_repeat = 3
+
+[node name="Hud" type="Control" node_paths=PackedStringArray("energy_bar")]
+light_mask = 0
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = 302.0
+offset_right = -174.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pqpvs")
+script = ExtResource("2_q5cee")
+energy_bar = NodePath("EnergyBarContainer/Foreground/ProgressBar")
+
+[node name="EnergyBarContainer" type="PanelContainer" parent="."]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_lojjk")
+layout_mode = 1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 544.0
+offset_bottom = 96.0
+
+[node name="Background" type="Panel" parent="EnergyBarContainer"]
+clip_children = 1
+light_mask = 0
+clip_contents = true
+layout_mode = 2
+theme_type_variation = &"RoundedInnerPanel"
+
+[node name="Leather" type="TextureRect" parent="EnergyBarContainer/Background"]
+modulate = Color(0.493764, 0.354885, 0.262621, 0.678431)
+self_modulate = Color(0.606626, 0.606626, 0.606626, 0.815686)
+light_mask = 524288
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_4b47d")
+
+[node name="Inset" type="Panel" parent="EnergyBarContainer"]
+clip_children = 2
+clip_contents = true
+layout_mode = 2
+theme_type_variation = &"InsetPanel"
+
+[node name="Foreground" type="Panel" parent="EnergyBarContainer"]
+clip_children = 1
+light_mask = 0
+clip_contents = true
+layout_mode = 2
+theme_type_variation = &"RoundedInnerPanel"
+
+[node name="ProgressBar" type="ProgressBar" parent="EnergyBarContainer/Foreground" node_paths=PackedStringArray("shadow")]
+clip_children = 2
+layout_mode = 2
+offset_right = 504.0
+offset_bottom = 56.0
+size_flags_vertical = 1
+localize_numeral_system = false
+theme_type_variation = &"EnergyBar"
+show_percentage = false
+script = ExtResource("2_xybv4")
+shadow = NodePath("Shadow")
+
+[node name="Shadow" type="TextureRect" parent="EnergyBarContainer/Foreground/ProgressBar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 16.0
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_7slrh")
+
+[node name="Glass" type="Panel" parent="EnergyBarContainer/Foreground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GlassPanel"
+
+[node name="TextureRect" type="TextureRect" parent="EnergyBarContainer/Foreground/Glass"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_e7cpv")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+light_mask = 524288
+color = Color(0.302179, 0.579184, 0.721697, 1)
+range_item_cull_mask = 524288
+shadow_color = Color(0.12, 0.16, 0.139333, 0.678431)
+shadow_filter = 1
+height = 0.2
