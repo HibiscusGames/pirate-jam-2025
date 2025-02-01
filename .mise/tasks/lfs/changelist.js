@@ -23,7 +23,7 @@ async function promptYesNo(message) {
 }
 
 function stageAndCommitFiles(files) {
-	execSync(`git add ${files.join(' ')}`)
+	execSync(`git add ${files.map(s => s.replace('\\', '/')).join(' ')}`)
 	execSync(`git commit --no-verify -m "feat(art): update ${files.join(', ')}"`)
 }
 

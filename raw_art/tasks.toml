@@ -6,11 +6,16 @@ usage = '''
 run = ['git lfs lock {{arg(name="files", var=true)}}']
 
 ["lfs:changelist"]
+dir="{{cwd}}"
 description = "Creates a changelist from one or more modified files and prompts for a description."
 usage = '''
 	arg "<files>" var=#true help="The files to include in the changelist."
 '''
 run = ['node .\.mise\tasks\lfs\changelist.js {{arg(name="files", var=true)}}']
+
+["lfs:sync"]
+description = "Synchronises your changes with the remote repository. This will first pull changes from the remote and then push your changes up."
+run = ['node .\.mise\tasks\lfs\sync.js {{arg(name="files", var=true)}}']
 
 ["lfs:rollback"]
 description = "Rollback one or more files in the git LFS repository. This will discard your local modifications."
