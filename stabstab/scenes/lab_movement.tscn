@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://dqhsv4rsyx147"]
+[gd_scene load_steps=14 format=4 uid="uid://dqhsv4rsyx147"]
 
 [ext_resource type="TileSet" uid="uid://mq8e0dpp3m6a" path="res://res/tiles/BaseTileSet.tres" id="1_75gwa"]
 [ext_resource type="PackedScene" uid="uid://c74vei6kk3byx" path="res://scenes/hud.tscn" id="1_d6r68"]
 [ext_resource type="PackedScene" uid="uid://dii8y5ofeuycc" path="res://scenes/player/pawn.tscn" id="2_q5sty"]
-[ext_resource type="Texture2D" uid="uid://qq3suackf4cd" path="res://res/enemies/target_01.tga" id="4_03qnv"]
+[ext_resource type="PackedScene" uid="uid://d1yk8onjx3vt5" path="res://scenes/Actor/target.tscn" id="4_hc1ql"]
 [ext_resource type="Script" path="res://src/actor/dynamic_camera.gd" id="4_ooant"]
 [ext_resource type="Script" path="res://src/debug/trajectory_tracer_2d_factory.gd" id="5_omek6"]
 [ext_resource type="Script" path="res://src/debug/position_marker_factory_2d.gd" id="6_hqgjp"]
@@ -27,17 +27,6 @@ resource_local_to_scene = true
 script = ExtResource("5_omek6")
 color = Color(0, 0.764706, 0.847059, 1)
 toggle = 1
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_c0vhg"]
-
-[sub_resource type="Gradient" id="Gradient_0tvna"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gkoxc"]
-gradient = SubResource("Gradient_0tvna")
-fill = 1
-fill_from = Vector2(0.513761, 0.495413)
-fill_to = Vector2(0.866973, 0.188073)
 
 [sub_resource type="Resource" id="Resource_6rmxh"]
 resource_local_to_scene = true
@@ -81,142 +70,37 @@ range_item_cull_mask = 31
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_hihhw")
 
-[node name="PlayerPawn" parent="Environment" node_paths=PackedStringArray("trail_starting_point") instance=ExtResource("2_q5sty")]
+[node name="PlayerPawn" parent="Environment" instance=ExtResource("2_q5sty")]
 position = Vector2(209, 352)
 decelaration_time_ms = 1500.0
-trail_starting_point = NodePath("Pivot/TrailSpawner")
 trail_material = SubResource("CanvasItemMaterial_vp720")
 trajectory_tracer = SubResource("Resource_j2eet")
 
 [node name="Targets" type="Node" parent="Environment"]
 
-[node name="Target Static 01" type="StaticBody2D" parent="Environment/Targets"]
+[node name="Target Static 01" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(-645, 64)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 01"]
-position = Vector2(-659, 121)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
+[node name="Target Static 02" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(-412, 737)
 
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 01"]
-position = Vector2(-658, 121)
-texture = ExtResource("4_03qnv")
+[node name="Target Static 03" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(-1397, 554)
 
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 01/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
+[node name="Target Static 04" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(-1252, -483)
 
-[node name="Target Static 02" type="StaticBody2D" parent="Environment/Targets"]
+[node name="Target Static 05" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(-196, -338)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 02"]
-position = Vector2(-347, 771)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
+[node name="Target Static 06" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(620, -569)
 
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 02"]
-position = Vector2(-346, 771)
-texture = ExtResource("4_03qnv")
+[node name="Target Static 07" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(1265, 492)
 
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 02/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
-
-[node name="Target Static 03" type="StaticBody2D" parent="Environment/Targets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 03"]
-position = Vector2(-1370, 539)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
-
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 03"]
-position = Vector2(-1369, 539)
-texture = ExtResource("4_03qnv")
-
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 03/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
-
-[node name="Target Static 04" type="StaticBody2D" parent="Environment/Targets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 04"]
-position = Vector2(-1264, -439)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
-
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 04"]
-position = Vector2(-1263, -439)
-texture = ExtResource("4_03qnv")
-
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 04/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
-
-[node name="Target Static 05" type="StaticBody2D" parent="Environment/Targets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 05"]
-position = Vector2(-143, -313)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
-
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 05"]
-position = Vector2(-142, -313)
-texture = ExtResource("4_03qnv")
-
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 05/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
-
-[node name="Target Static 06" type="StaticBody2D" parent="Environment/Targets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 06"]
-position = Vector2(673, -434)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
-
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 06"]
-position = Vector2(674, -434)
-texture = ExtResource("4_03qnv")
-
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 06/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
-
-[node name="Target Static 07" type="StaticBody2D" parent="Environment/Targets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 07"]
-position = Vector2(1313, 609)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
-
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 07"]
-position = Vector2(1314, 609)
-texture = ExtResource("4_03qnv")
-
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 07/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
-
-[node name="Target Static 08" type="StaticBody2D" parent="Environment/Targets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Targets/Target Static 08"]
-position = Vector2(1462, -691)
-scale = Vector2(6.4, 6.4)
-shape = SubResource("CircleShape2D_c0vhg")
-
-[node name="Target01" type="Sprite2D" parent="Environment/Targets/Target Static 08"]
-position = Vector2(1463, -691)
-texture = ExtResource("4_03qnv")
-
-[node name="PointLight2D" type="PointLight2D" parent="Environment/Targets/Target Static 08/Target01"]
-position = Vector2(-2, -2.67029e-05)
-scale = Vector2(6.55469, 6.55469)
-texture = SubResource("GradientTexture2D_gkoxc")
+[node name="Target Static 08" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+position = Vector2(1460, -550)
 
 [node name="Env_Lights" type="Node" parent="Environment"]
 
@@ -273,9 +157,8 @@ script = ExtResource("4_ooant")
 tracer_factory = SubResource("Resource_6rmxh")
 position_marker_factory = SubResource("Resource_mfooh")
 
-[node name="Hud" parent="Camera2D" node_paths=PackedStringArray("energy_bar") instance=ExtResource("1_d6r68")]
+[node name="Hud" parent="Camera2D" instance=ExtResource("1_d6r68")]
 offset_left = -960.0
 offset_top = -540.0
 offset_right = -960.0
 offset_bottom = -540.0
-energy_bar = NodePath("EnergyBarContainer/Foreground/ProgressBar")
