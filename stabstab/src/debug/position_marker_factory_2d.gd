@@ -1,12 +1,12 @@
 extends Resource
-class_name TrajectoryTracer2DFactory
+class_name PositionMarkerFactory2D
 
 ##### Exported Variables #####
 
-@export var color: Color = Color.AZURE
+@export var color: Color = Color.GOLD
 @export var toggle: Debug.Gizmo
 
-signal tracer_added(tracer: TrajectoryTracer2D)
+signal marker_added(marker: PositionMarker2D)
 
 ######### Lifecycle ##########
 
@@ -17,5 +17,6 @@ func _init() -> void:
 
 func _on_debug_toggled() -> void:
 	if Debug.is_enabled(toggle):
-		var tracer = TrajectoryTracer2D.create(color)
-		tracer_added.emit(tracer)
+		var tracer = PositionMarker2D.new()
+		marker_added.emit(tracer)
+

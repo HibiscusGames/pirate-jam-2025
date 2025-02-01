@@ -19,8 +19,10 @@ blend_mode = 1
 light_mode = 1
 
 [sub_resource type="Resource" id="Resource_aiyxh"]
+resource_local_to_scene = true
 script = ExtResource("2_nheat")
-color = Color(0.941176, 1, 1, 1)
+color = Color(0, 0.764706, 0.847059, 1)
+toggle = 1
 
 [sub_resource type="Gradient" id="Gradient_0twcv"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -38,7 +40,6 @@ fill_to = Vector2(0.868946, 0.148148)
 z_index = 20
 script = ExtResource("1_scw7u")
 speed = 1000.0
-deceleration_rate = 0.6
 trail_starting_point = NodePath("Pivot/TrailSpawner")
 trail_width_curve = SubResource("Curve_6nfwg")
 trail_color = SubResource("Gradient_3npg1")

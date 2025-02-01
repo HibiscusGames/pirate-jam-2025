@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://dqhsv4rsyx147"]
+[gd_scene load_steps=17 format=4 uid="uid://dqhsv4rsyx147"]
 
 [ext_resource type="TileSet" uid="uid://mq8e0dpp3m6a" path="res://res/tiles/BaseTileSet.tres" id="1_75gwa"]
 [ext_resource type="PackedScene" uid="uid://c74vei6kk3byx" path="res://scenes/hud.tscn" id="1_d6r68"]
 [ext_resource type="PackedScene" uid="uid://dii8y5ofeuycc" path="res://scenes/player/pawn.tscn" id="2_q5sty"]
 [ext_resource type="Texture2D" uid="uid://qq3suackf4cd" path="res://res/enemies/target_01.tga" id="4_03qnv"]
+[ext_resource type="Script" path="res://src/actor/dynamic_camera.gd" id="4_ooant"]
+[ext_resource type="Script" path="res://src/debug/trajectory_tracer_2d_factory.gd" id="5_omek6"]
+[ext_resource type="Script" path="res://src/debug/position_marker_factory_2d.gd" id="6_hqgjp"]
 
 [sub_resource type="Gradient" id="Gradient_dcusg"]
 offsets = PackedFloat32Array(0, 0.357143, 0.681818)
@@ -19,6 +22,12 @@ resource_local_to_scene = true
 blend_mode = 1
 light_mode = 1
 
+[sub_resource type="Resource" id="Resource_j2eet"]
+resource_local_to_scene = true
+script = ExtResource("5_omek6")
+color = Color(0, 0.764706, 0.847059, 1)
+toggle = 1
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_c0vhg"]
 
 [sub_resource type="Gradient" id="Gradient_0tvna"]
@@ -29,6 +38,17 @@ gradient = SubResource("Gradient_0tvna")
 fill = 1
 fill_from = Vector2(0.513761, 0.495413)
 fill_to = Vector2(0.866973, 0.188073)
+
+[sub_resource type="Resource" id="Resource_6rmxh"]
+resource_local_to_scene = true
+script = ExtResource("5_omek6")
+color = Color(1, 0.843137, 0, 1)
+toggle = 2
+
+[sub_resource type="Resource" id="Resource_mfooh"]
+script = ExtResource("6_hqgjp")
+color = Color(1, 0.843137, 0, 1)
+toggle = 2
 
 [node name="LabMovement" type="Node2D"]
 
@@ -63,8 +83,10 @@ texture = SubResource("GradientTexture2D_hihhw")
 
 [node name="PlayerPawn" parent="Environment" node_paths=PackedStringArray("trail_starting_point") instance=ExtResource("2_q5sty")]
 position = Vector2(209, 352)
+decelaration_time_ms = 1500.0
 trail_starting_point = NodePath("Pivot/TrailSpawner")
 trail_material = SubResource("CanvasItemMaterial_vp720")
+trajectory_tracer = SubResource("Resource_j2eet")
 
 [node name="Targets" type="Node" parent="Environment"]
 
@@ -247,6 +269,9 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_hihhw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("4_ooant")
+tracer_factory = SubResource("Resource_6rmxh")
+position_marker_factory = SubResource("Resource_mfooh")
 
 [node name="Hud" parent="Camera2D" node_paths=PackedStringArray("energy_bar") instance=ExtResource("1_d6r68")]
 offset_left = -960.0

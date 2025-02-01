@@ -4,12 +4,14 @@ extends Node
 enum Gizmo {
 	NONE = 0b0000,
 	TRAJECTORY = 0b0001,
+	CAMERA = 0b0010,
 	ALL = 0b1111,
 }
 
 const GIZMO_NAME: Dictionary = {
 	Gizmo.NONE: "NONE",
 	Gizmo.TRAJECTORY: "TRAJECTORY",
+	Gizmo.CAMERA: "CAMERA",
 	Gizmo.ALL: "ALL",
 }
 

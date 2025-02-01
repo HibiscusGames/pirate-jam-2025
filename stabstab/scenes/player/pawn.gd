@@ -8,7 +8,7 @@ signal died()
 
 @export_group("Movement")
 @export var speed: float = 500.0
-@export var deceleration_rate: float = 0.1;
+@export var decelaration_time_ms: float = 500;
 @export var bounce_factor: float = 0.1;
 
 @export_group("Effects")
@@ -31,6 +31,7 @@ signal died()
 var _velocity: Vector2 = Vector2.ZERO
 var _trajectory: Trajectory = Trajectory.create(global_position, global_position)
 var _cur_trail: EffectTrail
+var _deceleration_tween: Tween
 
 ##### Lifecycle #####
 
@@ -65,23 +66,34 @@ func _on_energy_depleted(_pool: EnergyPool) -> void:
 func _tick(delta: float) -> void:
 	_trajectory.end = get_local_mouse_position()
 
-	if (_velocity.length() < 1): _stop()
+	if (_velocity.length() < 1): _stop_movement()
 
 	_move(delta)
 
 func _launch():
 	GameState.energy_pool.consume()
-	_velocity = _trajectory.get_direction() * speed
-	_spawn_trail()
+	_start_movement(_trajectory.get_direction() * speed, decelaration_time_ms)
 
 func _move(delta: float) -> void:
 	var _collision: KinematicCollision2D = move_and_collide(_velocity * delta)
-	if _collision != null:
-		_velocity = _velocity.bounce(_collision.get_normal()) * bounce_factor
+	if _collision != null: _start_movement(_velocity.bounce(_collision.get_normal()) * bounce_factor, decelaration_time_ms * bounce_factor)
 
-	_velocity = lerp(_velocity, Vector2.ZERO, deceleration_rate * delta) # TODO: Need a different kind of interpolation that tapers off sharply instead of slowing down over time
+func _start_deceleration(delay_ms: float):
+	_deceleration_tween = create_tween().set_parallel()
+	_deceleration_tween.tween_property(self, "_velocity", Vector2.ZERO, delay_ms / 1000.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
-func _stop():
+func _start_movement(movement: Vector2, deceleration_delay_ms: float):
+	_stop_movement()
+	_velocity = movement
+	_start_deceleration(deceleration_delay_ms)
+	_spawn_trail()
+
+func _stop_movement():
+	if _deceleration_tween != null:
+		print_debug("no tween for you")
+		_deceleration_tween.kill()
+		_deceleration_tween = null
+	
 	_velocity = Vector2.ZERO
 	_destroy_trail()
 
