@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1yk8onjx3vt5"]
+
+[ext_resource type="Texture2D" uid="uid://qq3suackf4cd" path="res://res/enemies/target_01.tga" id="1_sxylj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0vhg"]
+
+[sub_resource type="Gradient" id="Gradient_0tvna"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gkoxc"]
+gradient = SubResource("Gradient_0tvna")
+fill = 1
+fill_from = Vector2(0.513761, 0.495413)
+fill_to = Vector2(0.866973, 0.188073)
+
+[node name="Target Static 01" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.00006, 7.62939e-06)
+scale = Vector2(6.4, 6.4)
+shape = SubResource("CircleShape2D_c0vhg")
+
+[node name="Target01" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_sxylj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Target01"]
+position = Vector2(-2, -2.67029e-05)
+scale = Vector2(6.55469, 6.55469)
+texture = SubResource("GradientTexture2D_gkoxc")
