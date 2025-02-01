@@ -5,6 +5,13 @@ usage = '''
 '''
 run = ['git lfs lock {{arg(name="files", var=true)}}']
 
+["lfs:changelist"]
+description = "Creates a changelist from one or more modified files and prompts for a description."
+usage = '''
+	arg "<files>" var=#true help="The files to include in the changelist."
+'''
+run = ['node .\.mise\tasks\lfs\changelist.js {{arg(name="files", var=true)}}']
+
 ["lfs:rollback"]
 description = "Rollback one or more files in the git LFS repository. This will discard your local modifications."
 usage = '''
