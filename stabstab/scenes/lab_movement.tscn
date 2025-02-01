@@ -78,28 +78,28 @@ trajectory_tracer = SubResource("Resource_j2eet")
 
 [node name="Targets" type="Node" parent="Environment"]
 
-[node name="Target Static 01" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 01" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(-645, 64)
 
-[node name="Target Static 02" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 02" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(-412, 737)
 
-[node name="Target Static 03" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 03" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(-1397, 554)
 
-[node name="Target Static 04" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 04" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(-1252, -483)
 
-[node name="Target Static 05" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 05" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(-196, -338)
 
-[node name="Target Static 06" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 06" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(620, -569)
 
-[node name="Target Static 07" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 07" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(1265, 492)
 
-[node name="Target Static 08" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
+[node name="Target 08" parent="Environment/Targets" instance=ExtResource("4_hc1ql")]
 position = Vector2(1460, -550)
 
 [node name="Env_Lights" type="Node" parent="Environment"]
