@@ -15,7 +15,7 @@ run = ['node .\.mise\tasks\lfs\changelist.js {{arg(name="files", var=true)}}']
 
 ["lfs:sync"]
 description = "Synchronises your changes with the remote repository. This will first pull changes from the remote and then push your changes up."
-run = ['node .\.mise\tasks\lfs\sync.js {{arg(name="files", var=true)}}']
+run = ['node .\.mise\tasks\lfs\sync.js']
 
 ["lfs:rollback"]
 description = "Rollback one or more files in the git LFS repository. This will discard your local modifications."
