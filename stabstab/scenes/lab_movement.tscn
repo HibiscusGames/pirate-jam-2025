@@ -57,14 +57,7 @@ rotation = -0.507891
 shadow_enabled = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="Environment"]
-position = Vector2(512, 280)
-scale = Vector2(7.44531, 7.68261)
-range_item_cull_mask = 31
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_hihhw")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Environment"]
-position = Vector2(512, 424)
+position = Vector2(550, 369)
 scale = Vector2(7.44531, 7.68261)
 range_item_cull_mask = 31
 shadow_enabled = true
@@ -105,13 +98,7 @@ position = Vector2(1460, -550)
 [node name="Env_Lights" type="Node" parent="Environment"]
 
 [node name="PointLight2D2" type="PointLight2D" parent="Environment/Env_Lights"]
-position = Vector2(512, 280)
-scale = Vector2(7.44531, 7.68261)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_hihhw")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Environment/Env_Lights"]
-position = Vector2(512, 424)
+position = Vector2(542, -30.9999)
 scale = Vector2(7.44531, 7.68261)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_hihhw")
